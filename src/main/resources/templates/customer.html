@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en" layout:decorator="layout/default_layout">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customer</title>
+</head>
+<body>
+    <div layout:fragment="content">
+        <div class="row mt-3">
+            <div class="h1">All Customer</div>
+            <div class="col-md-12 mt-2">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Name</th>
+                            <th>Gender</th>
+                            <th>Book</th>
+                            <th>Category</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr th:each="c : ${customers}">
+                            <td th:text="${c.id}"></td>
+                            <td th:text="${c.name}"></td>
+                            <td th:text="${c.gender}"></td>
+                            <td th:text="${c.book.name}"></td>
+                            <td th:text="${c.book.category.name}"></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
